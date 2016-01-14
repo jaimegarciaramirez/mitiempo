@@ -5,7 +5,7 @@ module.exports = function(application) {
     logger.info('Binding endpoints in weather')
     
     application.get('/current', function(request, response) {
-        weatherRequest.currentByZip(20187).then(function(result) {
+        weatherRequest.currentByZip(request.query.zip).then(function(result) {
             response.send(result)
         })
     })
