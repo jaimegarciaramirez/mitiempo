@@ -1,0 +1,16 @@
+{
+  "name": "mitiempo",
+  "version": "1.0.0",
+  "description": "miTiempo, aplicacion para presentar el tiempo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jaime Garcia Ramirez",
+  "license": "ISC",
+  "dependencies": {
+    "command-line-args": "^2.1.4",
+    "express": "^4.13.3",
+    "winston": "^2.1.1"
+  }
+}
