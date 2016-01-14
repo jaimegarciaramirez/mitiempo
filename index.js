@@ -5,8 +5,10 @@ var miTiempo = express()
 
 logger.info('Initializing miTiempo application')
 
-var main = require('./modules/main')(miTiempo)
-var weather = require('./modules/weather/weather')(miTiempo)
+var apiPathPrefix = '/api'
+var main = require('./modules/main')(miTiempo, apiPathPrefix)
+var weather = require('./modules/weather/weather')(miTiempo, apiPathPrefix)
+var views = require('./modules/views/views')(miTiempo)
 
 logger.info('Initializing server on port ', args.port)
 

@@ -1,0 +1,23 @@
+include ./head.jade
+mixin dayAtAGlance(id, day, low, high, weatherId)
+    li(id=id, class="day-forecast")
+        a(href="/hourly")
+            span.day.
+                #{day}
+            span.forecast
+                | #{low} / #{high}
+                i(class="wi wi-owm-" + weatherId)
+
+body
+    #current-weather-view
+        h2 Ahorita
+        i(class="wi current-weather-icon wi-owm-300")
+        #current-weather-statistics
+            span#current-weather-temperature.
+                20 F
+    ul#five-day-forecast
+        +dayAtAGlance('day1', 'Jueves', '20', '32', '300')
+        +dayAtAGlance('day2', 'Viernes', '20', '32', '622')
+        +dayAtAGlance('day3', 'Sabado', '20', '32', '621')
+        +dayAtAGlance('day4', 'Domingo', '75', '82', '800')
+        +dayAtAGlance('day5', 'Lunes', '80', '84', '800')

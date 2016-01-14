@@ -1,0 +1,22 @@
+include ./head.jade
+
+mixin hourByHour(id, time, temperature, weatherId)
+    li(id=id, class="day-forecast")
+        span.day.
+            #{time}
+        span.forecast
+            | #{temperature}
+            i(class="wi wi-owm-" + weatherId)
+
+body
+    #current-weather-view
+        h2 Ahorita
+        i(class="wi current-weather-icon wi-owm-300")
+        #current-weather-statistics
+            span#current-weather-temperature.
+                20#deg; F / 40
+    ul#five-day-forecast 
+        +hourByHour('id1', '12:00pm', '20', '611')
+        +hourByHour('id2', '3:00pm', '21', '621')
+        +hourByHour('id3', '6:00pm', '23', '615')
+        +hourByHour('id4', '9:00pm', '25', '620')
