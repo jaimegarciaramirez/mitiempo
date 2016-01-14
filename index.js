@@ -6,6 +6,8 @@ var miTiempo = express()
 logger.info('Initializing miTiempo application')
 
 var main = require('./modules/main')(miTiempo)
+var weather = require('./modules/weather/weather')(miTiempo)
 
 logger.info('Initializing server on port ', args.port)
+
 miTiempo.listen(args.port)
