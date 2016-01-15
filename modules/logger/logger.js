@@ -1,4 +1,4 @@
-var args = require('../arguments/arguments')
+var args = global.requireLocal('arguments/arguments')
 var winston = require('winston')
 
 /**

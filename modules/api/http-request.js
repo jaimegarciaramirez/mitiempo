@@ -1,7 +1,7 @@
 var http = require('http')
 var q = require('q')
-var logger = require('../logger/logger')
-var args = require('../arguments/arguments')
+var logger = global.requireLocal('logger/logger')
+var args = global.requireLocal('arguments/arguments')
 
 var cache = {}
 

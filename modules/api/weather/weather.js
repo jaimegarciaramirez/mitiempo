@@ -1,5 +1,5 @@
-var logger = require('../logger/logger')
-var weatherRequest = require('./weather-requests')
+var logger = global.requireLocal('logger/logger')
+var weatherRequest = global.requireLocal('api/weather/weather-requests')
 
 module.exports = function(application, prefix) {
     logger.info('Binding endpoints in weather')

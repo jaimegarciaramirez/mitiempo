@@ -1,5 +1,6 @@
 var express = require('express')
-var logger = require('../logger/logger')
+var logger = global.requireLocal('logger/logger')
+var weather = global.requireLocal('api/weather/weather')
 
 module.exports = function(application) {
     function bindEndpointToTemplate(endpoint, parameters) {

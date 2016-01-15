@@ -1,14 +1,18 @@
-var args = require('./modules/arguments/arguments')
+global.MODULES = __dirname + '/modules/';
+global.requireLocal = function(modulePath) {
+    return require(global.MODULES + modulePath)
+}
 var express = require('express')
-var logger = require('./modules/logger/logger')
+var args = global.requireLocal('arguments/arguments')
+var logger = global.requireLocal('logger/logger')
+
 var miTiempo = express()
 
 logger.info('Initializing miTiempo application')
 
 var apiPathPrefix = '/api'
-var main = require('./modules/main')(miTiempo, apiPathPrefix)
-var weather = require('./modules/weather/weather')(miTiempo, apiPathPrefix)
-var views = require('./modules/views/views')(miTiempo)
+var weather = global.requireLocal('api/weather/weather')(miTiempo, apiPathPrefix)
+var views = global.requireLocal('views/views')(miTiempo)
 
 logger.info('Initializing server on port ', args.port)
 
