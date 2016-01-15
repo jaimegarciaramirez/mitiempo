@@ -1,0 +1,190 @@
+{
+    "city": {
+        "id": 4792255,
+        "name": "Warrenton",
+        "coord": {
+            "lon": -77.795273,
+            "lat": 38.713451
+        },
+        "country": "US",
+        "population": 0
+    },
+    "cod": "200",
+    "message": 0.0092,
+    "cnt": 7,
+    "list": [
+        {
+            "dt": 1452877200,
+            "temp": {
+                "day": 48.9,
+                "min": 38.08,
+                "max": 48.9,
+                "night": 38.08,
+                "eve": 41.67,
+                "morn": 48.9
+            },
+            "pressure": 995.46,
+            "humidity": 51,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "moderate rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 3.72,
+            "deg": 159,
+            "clouds": 36,
+            "rain": 4
+        },
+        {
+            "dt": 1452963600,
+            "temp": {
+                "day": 47.86,
+                "min": 25.81,
+                "max": 47.86,
+                "night": 25.81,
+                "eve": 34.92,
+                "morn": 27.7
+            },
+            "pressure": 990.4,
+            "humidity": 59,
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "sky is clear",
+                    "icon": "01d"
+                }
+            ],
+            "speed": 9.83,
+            "deg": 290,
+            "clouds": 0
+        },
+        {
+            "dt": 1453050000,
+            "temp": {
+                "day": 34.45,
+                "min": 21.9,
+                "max": 35.76,
+                "night": 24.67,
+                "eve": 30.29,
+                "morn": 21.9
+            },
+            "pressure": 995.96,
+            "humidity": 63,
+            "weather": [
+                {
+                    "id": 600,
+                    "main": "Snow",
+                    "description": "light snow",
+                    "icon": "13d"
+                }
+            ],
+            "speed": 3.61,
+            "deg": 295,
+            "clouds": 76,
+            "snow": 0.14
+        },
+        {
+            "dt": 1453136400,
+            "temp": {
+                "day": 21.6,
+                "min": 11.93,
+                "max": 21.6,
+                "night": 12.42,
+                "eve": 16.84,
+                "morn": 11.93
+            },
+            "pressure": 1003.94,
+            "humidity": 36,
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "sky is clear",
+                    "icon": "01d"
+                }
+            ],
+            "speed": 14.28,
+            "deg": 301,
+            "clouds": 8,
+            "snow": 0.01
+        },
+        {
+            "dt": 1453222800,
+            "temp": {
+                "day": 29.43,
+                "min": 17.49,
+                "max": 29.43,
+                "night": 17.49,
+                "eve": 24.01,
+                "morn": 18.81
+            },
+            "pressure": 1011.45,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "sky is clear",
+                    "icon": "01d"
+                }
+            ],
+            "speed": 11.75,
+            "deg": 314,
+            "clouds": 1
+        },
+        {
+            "dt": 1453309200,
+            "temp": {
+                "day": 30.56,
+                "min": 18,
+                "max": 30.56,
+                "night": 23.23,
+                "eve": 23.67,
+                "morn": 18
+            },
+            "pressure": 1012.14,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 600,
+                    "main": "Snow",
+                    "description": "light snow",
+                    "icon": "13d"
+                }
+            ],
+            "speed": 2.48,
+            "deg": 269,
+            "clouds": 36,
+            "snow": 0.34
+        },
+        {
+            "dt": 1453395600,
+            "temp": {
+                "day": 31.21,
+                "min": 25.56,
+                "max": 31.21,
+                "night": 26.56,
+                "eve": 29.01,
+                "morn": 25.56
+            },
+            "pressure": 1004.59,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 601,
+                    "main": "Snow",
+                    "description": "snow",
+                    "icon": "13d"
+                }
+            ],
+            "speed": 3.28,
+            "deg": 73,
+            "clouds": 96,
+            "snow": 4.32
+        }
+    ]
+}

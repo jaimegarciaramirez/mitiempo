@@ -2,13 +2,11 @@ var http = require('http')
 var q = require('q')
 var logger = global.requireLocal('logger/logger')
 var args = global.requireLocal('arguments/arguments')
+var apiConfiguration = global.requireLocal('api/configuration')
 
 var cache = {}
 
-var options = {
-    port: 80,
-    hostname: 'api.openweathermap.org',
-}
+var options = apiConfiguration.options
 
 function clone(source) {
     return JSON.parse(JSON.stringify(source))

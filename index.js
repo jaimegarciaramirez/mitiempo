@@ -14,6 +14,10 @@ var apiPathPrefix = '/api'
 var weather = global.requireLocal('api/weather/weather')(miTiempo, apiPathPrefix)
 var views = global.requireLocal('views/views')(miTiempo)
 
+if (args.mocks) {
+    global.requireLocal('mocks/mocks')(miTiempo)
+}
+
 logger.info('Initializing server on port ', args.port)
 
 miTiempo.listen(args.port)

@@ -1,6 +1,6 @@
 var express = require('express')
 var logger = global.requireLocal('logger/logger')
-var weather = global.requireLocal('api/weather/weather')
+var weatherRequests = global.requireLocal('api/weather/weather-requests')
 
 module.exports = function(application) {
     function bindEndpointToTemplate(endpoint, parameters) {
@@ -19,6 +19,17 @@ module.exports = function(application) {
 
     logger.info('Binding templates for views to /views folder')
     application.set('view engine', 'jade')
-    bindEndpointToTemplate('', {title: 'miTiempo'})    
-    bindEndpointToTemplate('hourly', {title: 'miTiempo - Domingo'})    
+    bindEndpointToTemplate('hourly', {title: 'miTiempo - Domingo'})
+    
+    
+    application.get('/', function(request, response) {
+        weatherRequests.currentByZip('20187').then(function(result) {
+            var currentWeather = JSON.parse(result)
+            weatherRequests.forecast(currentWeather.id).then(function(forecastResult) {
+                var weatherForecast = JSON.parse(forecastResult)
+                currentWeather.forecast = weatherForecast
+                response.render('index.jade', currentWeather)
+            })
+        });       
+    })    
 }

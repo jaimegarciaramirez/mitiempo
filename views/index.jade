@@ -10,11 +10,11 @@ mixin dayAtAGlance(id, day, low, high, weatherId)
 
 body
     #current-weather-view
-        h2 Ahorita
+        h2 #{name}
         i(class="wi current-weather-icon wi-owm-300")
         #current-weather-statistics
             span#current-weather-temperature.
-                20 F
+                #{main.temp}
     ul#five-day-forecast
         +dayAtAGlance('day1', 'Jueves', '20', '32', '300')
         +dayAtAGlance('day2', 'Viernes', '20', '32', '622')

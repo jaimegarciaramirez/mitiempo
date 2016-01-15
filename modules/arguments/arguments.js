@@ -3,7 +3,8 @@ var commandLineArgs = require('command-line-args')
 var cli = commandLineArgs([
     { name: 'port', alias: 'p', type: Number, defaultValue: 3000 },
     { name: 'level', alias: 'l', type: String, defaultValue: 'debug' },
-    { name: 'cacheTimeout', alias: 't', type: Number, defaultValue: 20000 }
+    { name: 'cacheTimeout', alias: 't', type: Number, defaultValue: 20000 },
+    { name: 'mocks', alias: 'm', type: Boolean, defaultValue: false}
 ])
 
 var options = {}
