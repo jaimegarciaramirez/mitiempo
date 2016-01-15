@@ -24,9 +24,9 @@ module.exports = function(application) {
     
     application.get('/', function(request, response) {
         weatherRequests.currentByZip('20187').then(function(result) {
-            var currentWeather = JSON.parse(result)
+            var currentWeather = result
             weatherRequests.forecast(currentWeather.id).then(function(forecastResult) {
-                var weatherForecast = JSON.parse(forecastResult)
+                var weatherForecast = forecastResult
                 currentWeather.forecast = weatherForecast
                 response.render('index.jade', currentWeather)
             })

@@ -1,23 +1,22 @@
 include ./head.jade
-mixin dayAtAGlance(id, day, low, high, weatherId)
+mixin dayAtAGlance(id, day, date, low, high, weatherId)
     li(id=id, class="day-forecast")
         a(href="/hourly")
+            span.date.
+                (#{date.getMonth() + 1}/#{date.getDate()})
             span.day.
                 #{day}
             span.forecast
-                | #{low} / #{high}
+                | #{low}&deg; / #{high}&deg;
                 i(class="wi wi-owm-" + weatherId)
 
 body
     #current-weather-view
         h2 #{name}
-        i(class="wi current-weather-icon wi-owm-300")
+        i(class='wi current-weather-icon wi-owm-' + weather[0].id)
         #current-weather-statistics
             span#current-weather-temperature.
-                #{main.temp}
+                #{main.temp}&deg;
     ul#five-day-forecast
-        +dayAtAGlance('day1', 'Jueves', '20', '32', '300')
-        +dayAtAGlance('day2', 'Viernes', '20', '32', '622')
-        +dayAtAGlance('day3', 'Sabado', '20', '32', '621')
-        +dayAtAGlance('day4', 'Domingo', '75', '82', '800')
-        +dayAtAGlance('day5', 'Lunes', '80', '84', '800')
+        each value in forecast.list
+            +dayAtAGlance('time' + value.day, value.day, value.date, value.temp.min, value.temp.max, value.weather[0].id)

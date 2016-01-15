@@ -1,9 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
 /* Resetting known elements */
 html, body, p, div, h2, h1, ul, li {
     margin: 0; 
     padding: 0;
     font-size: normal;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: "Lato", Arial, Helvetica, sans-serif
+}
+
+html, body {
+    background: #eee;
 }
 
 #current-weather-view {
@@ -11,33 +17,65 @@ html, body, p, div, h2, h1, ul, li {
     font-size: 1.5rem;    
 }
 
+h2 {
+    font-size: 1em;
+}
+
+#current-weather-statistics {
+    margin-top: 10px;
+}
+
+
 .current-weather-icon {
-    font-size: 8rem;
+    font-size: 7rem;
     display: block;
+    margin-bottom: 5px;
 }
 
 #five-day-forecast {
     list-style: none;
-    font-size: 1.25rem;
     border-bottom: 1px solid black;
     margin-top: 2em;
+    background: #008BBA;
+    color: white;
 }
 
 #five-day-forecast a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 #five-day-forecast li {
-    padding: 10px;
-    border-top: 1px solid black;
+    padding: 13px;
+    border-top: 1px solid #006e93;
+    vertical-align: middle;
 }
 
 #five-day-forecast .forecast {
     position: absolute;
     right: 10px;
+    font-size: 16px;
+    margin-top: 5px;
 }
 
 #five-day-forecast .forecast i {
     margin-left: 7px;
 }
+
+#five-day-forecast .date {
+    color: #ddd;
+    margin-right: 5px;
+    font-size: 14px;
+    line-height: 24px;
+    vertical-align: top;
+}
+
+.day {
+    font-size: 22px;
+    line-height: 24px;
+}
+
+/* Colors picked from Aladdin here
+http://www.dtelepathy.com/blog/inspiration/beautiful-color-palettes-for-your-next-web-project
+*/
+
