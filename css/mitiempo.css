@@ -10,6 +10,7 @@ html, body, p, div, h2, h1, ul, li {
 
 html, body {
     background: #eee;
+    color: #354458;
 }
 
 #current-weather-view {

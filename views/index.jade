@@ -1,7 +1,7 @@
 include ./head.jade
-mixin dayAtAGlance(id, day, date, low, high, weatherId)
+mixin dayAtAGlance(id, day, date, low, high, weatherId, cityId)
     li(id=id, class="day-forecast")
-        a(href="/hourly")
+        a(href='/hourly?cityId=' + cityId + '&date=' + encodeURIComponent(date.toISOString()))
             span.date.
                 (#{date.getMonth() + 1}/#{date.getDate()})
             span.day.
@@ -19,4 +19,4 @@ body
                 #{main.temp}&deg;
     ul#five-day-forecast
         each value in forecast.list
-            +dayAtAGlance('time' + value.day, value.day, value.date, value.temp.min, value.temp.max, value.weather[0].id)
+            +dayAtAGlance('time' + value.day, value.day, value.date, value.temp.min, value.temp.max, value.weather[0].id, id)

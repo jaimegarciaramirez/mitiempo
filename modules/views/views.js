@@ -3,14 +3,18 @@ var logger = global.requireLocal('logger/logger')
 var weatherRequests = global.requireLocal('api/weather/weather-requests')
 
 module.exports = function(application) {
-    function bindEndpointToTemplate(endpoint, parameters) {
-        var template = endpoint
-        if (endpoint == '') {
-            template = 'index'
+    
+    function friendlyDate(date) {
+        var month = date.getMonth() + 1
+        var day = date.getDate()
+        var year = date.getYear()
+        if (month < 10) {
+            month = '0' + month
         }
-        application.get('/' + endpoint, function(request, response) {
-            response.render(template + '.jade', parameters)
-        })
+        if (day < 10) {
+            day = '0' + day
+        }
+        return month + '/' + day + '/' + year
     }
 
     logger.info('Binding CSS for views to /css folder')
@@ -19,8 +23,16 @@ module.exports = function(application) {
 
     logger.info('Binding templates for views to /views folder')
     application.set('view engine', 'jade')
-    bindEndpointToTemplate('hourly', {title: 'miTiempo - Domingo'})
     
+    application.get('/hourly', function(request, response) {
+        var date = new Date(request.query.date)
+        var result  = {friendlyDate: friendlyDate(date)}
+        console.log('got params:', request.query)
+        weatherRequests.hourly(request.query.cityId, date).then(function(hourByHourResult) {
+            result.hourByHour = hourByHourResult
+            response.render('hourly.jade', result)  
+        })  
+    })
     
     application.get('/', function(request, response) {
         weatherRequests.currentByZip('20187').then(function(result) {
