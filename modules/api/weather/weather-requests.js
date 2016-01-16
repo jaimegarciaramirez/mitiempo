@@ -71,7 +71,6 @@ module.exports = {
                 }
             }
             response.list = list
-            console.log('final', JSON.stringify(response, null, 4))
             return response
         })
     }    

@@ -27,7 +27,6 @@ module.exports = function(application) {
     application.get('/hourly', function(request, response) {
         var date = new Date(request.query.date)
         var result  = {friendlyDate: friendlyDate(date)}
-        console.log('got params:', request.query)
         weatherRequests.hourly(request.query.cityId, date).then(function(hourByHourResult) {
             result.hourByHour = hourByHourResult
             response.render('hourly.jade', result)  

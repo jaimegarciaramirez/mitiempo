@@ -44,10 +44,11 @@ h2 {
 #five-day-forecast a {
     text-decoration: none;
     color: white;
+    display: block;
+    padding: 13px;
 }
 
 #five-day-forecast li {
-    padding: 13px;
     border-top: 1px solid #006e93;
     vertical-align: middle;
 }
@@ -55,7 +56,7 @@ h2 {
 #five-day-forecast .forecast {
     position: absolute;
     right: 10px;
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 5px;
 }
 
@@ -72,8 +73,9 @@ h2 {
 }
 
 .day {
-    font-size: 22px;
+    font-size: 18px;
     line-height: 24px;
+    color: #eee
 }
 
 /* Colors picked from Aladdin here
