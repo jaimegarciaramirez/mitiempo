@@ -1,6 +1,6 @@
 # Getting started
 
-You need to have nodejs and npm installed, they can be installed from here: https://nodejs.org/en/
+Blab You need to have nodejs and npm installed, they can be installed from here: https://nodejs.org/en/
 
 After that, execute `npm install` to install all required dependencies
 
